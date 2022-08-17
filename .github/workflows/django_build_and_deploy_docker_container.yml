@@ -35,6 +35,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Build the Docker image
+        run: docker build . --file Dockerfile.ci
     - uses: mr-smithers-excellent/docker-build-push@v5
       name: Build & push Docker image
       with:
