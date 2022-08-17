@@ -36,6 +36,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+      name: Checkout code for docker push
     - uses: mr-smithers-excellent/docker-build-push@v5
       name: Build & push Docker image
       with:
