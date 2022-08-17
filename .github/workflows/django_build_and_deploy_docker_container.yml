@@ -35,6 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - uses: actions/checkout@v2
     - name: Build the Docker image
         run: docker build . --file Dockerfile.ci
     - uses: mr-smithers-excellent/docker-build-push@v5
