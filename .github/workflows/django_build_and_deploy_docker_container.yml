@@ -13,7 +13,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.9]
 
     steps:
     - uses: actions/checkout@v3
@@ -40,7 +40,7 @@ jobs:
     - uses: mr-smithers-excellent/docker-build-push@v5
       name: Build & push Docker image
       with:
-        tag: latest
+        tags: v1, latest
         image: joetib/webapp
         dockerfile: Dockerfile.ci
         registry: docker.io
