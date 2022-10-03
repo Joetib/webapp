@@ -14,6 +14,7 @@ RUN pip install -r requirements.txt
 
 # Copy project
 COPY . /code/
-RUN python /code/manage.py runserver 0.0.0.0:8000
+#RUN python /code/manage.py runserver 0.0.0.0:8000
 
 EXPOSE 8000
+CMD [ "python", "/code/manage.py runserver 0.0.0.0:8000"]
