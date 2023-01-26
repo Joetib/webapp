@@ -40,7 +40,7 @@ jobs:
     - uses: mr-smithers-excellent/docker-build-push@v5
       name: Build & push Docker image
       with:
-        tags: v1, latest
+        tags: ${{ github.run_id }}, latest
         image: joetib/webapp
         dockerfile: Dockerfile
         registry: docker.io
