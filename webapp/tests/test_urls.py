@@ -1,13 +1,13 @@
 # test_webapp_urls.py
+import pytest
 from django.urls import reverse, resolve
-from django.test import SimpleTestCase
 
-class TestUrls(SimpleTestCase):
+@pytest.mark.django_db
+def test_admin_url():
+    path = reverse('admin:index')
+    assert resolve(path).view_name == 'admin:index'
 
-    def test_admin_url_resolves(self):
-        url = reverse('admin:index')
-        self.assertEquals(resolve(url).func.__name__, 'index')
-
-    def test_homepage_url_resolves(self):
-        url = reverse('homepage')
-        self.assertEquals(resolve(url).func.__name__, 'homepage')
+@pytest.mark.django_db
+def test_homepage_url():
+    path = reverse('homepage')
+    assert resolve(path).view_name == 'homepage'
